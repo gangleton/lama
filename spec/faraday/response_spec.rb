@@ -20,12 +20,12 @@ describe Faraday::Response do
 
       before do
         stub_get("/search(from)02-01-2011(to)02-28-2011").
-          to_return(:status => status, :body => fixture("availability.json"))
+        to_return(:status => status, :body => fixture("inspection.xml"))
       end
 
       it "should raise #{exception.name} error" do
         lambda do
-          @client.availability
+          @client.inspections
         end.should raise_error exception
       end
     end

@@ -6,6 +6,7 @@ Gem::Specification.new do |gem|
   gem.add_dependency 'faraday'
   gem.add_dependency 'faraday_middleware'
   gem.add_dependency 'hashie'
+  gem.add_dependency 'rash'
   gem.add_dependency 'yajl-ruby'
   gem.add_development_dependency 'rake'
   gem.add_development_dependency 'rspec'

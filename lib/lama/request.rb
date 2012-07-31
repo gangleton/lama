@@ -9,7 +9,6 @@ module LAMA
     def request(method, path, options)
       response = connection.send(method) do |request|
         request.url(path, options)
-        request.params['response'] = 'xml'
       end
       response.body
     end

@@ -7,10 +7,10 @@ module LAMA
     def connection(options={})
       merged_options = faraday_options.merge({
         :headers => {
-          'Accept' => "application/#{response}",
+          # 'Accept' => "application/#{response}",
           'User-Agent' => user_agent
         },
-        :ssl => {:verify => false}.
+        :ssl => {:verify => false},
         :url => endpoint
       })
 

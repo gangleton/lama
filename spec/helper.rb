@@ -2,16 +2,17 @@ unless ENV['CI']
   require 'simplecov'
   SimpleCov.start
 end
+
 require 'lama'
 require 'rspec'
 require 'webmock/rspec'
 
 def a_get(url)
-  a_request(:get, sfpark_url(url))
+  a_request(:get, lama_url(url))
 end
 
 def stub_get(url)
-  stub_request(:get, sfpark_url(url))
+  s = stub_request(:get, lama_url(url))
 end
 
 def fixture_path
