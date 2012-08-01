@@ -11,8 +11,8 @@ def a_get(url)
   a_request(:get, lama_url(url))
 end
 
-def stub_get(url)
-  s = stub_request(:get, lama_url(url))
+def stub_get(url, login = 'test@example.com', pass = '12345')
+  s = stub_request(:get, lama_url(url, login, pass))
 end
 
 def fixture_path
@@ -23,6 +23,6 @@ def fixture(file)
   File.new(fixture_path + '/' + file)
 end
 
-def lama_url(url)
-  "https://dev-lama01.cityofno.com/CFA/rest/incidents#{url}"
+def lama_url(url, login = 'test@example.com', pass = '12345')
+  "https://#{login}:#{pass}@dev-lama01.cityofno.com/CFA/rest/incidents#{url}"
 end

@@ -15,6 +15,12 @@ describe LAMA do
     it "should be a LAMA::Client" do
       LAMA.new.should be_a LAMA::Client
     end
+
+    it "should accept custom auth options" do
+      @lama = LAMA.new({ :login => "fuzz@codeforamerica.org", :pass => "badger" })
+      @lama.login.should == "fuzz@codeforamerica.org"
+      @lama.pass.should == "badger"
+    end
   end
 
   describe ".delegate" do

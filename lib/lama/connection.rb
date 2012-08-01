@@ -15,6 +15,7 @@ module LAMA
       })
 
       Faraday.new(merged_options) do |builder|
+        builder.basic_auth login, pass
         builder.use Faraday::Request::UrlEncoded
         builder.use Faraday::Response::RaiseError
         builder.use Faraday::Response::Rashify

@@ -2,7 +2,7 @@ require 'helper'
 
 describe Faraday::Response do
   before do
-    @client = LAMA::Client.new
+    @client = LAMA::Client.new()
   end
 
   {

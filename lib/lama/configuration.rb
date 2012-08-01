@@ -8,12 +8,18 @@ module LAMA
       :proxy,
       :response,
       :user_agent,
+      :login,
+      :pass,
       :faraday_options
     ].freeze
 
     DEFAULT_ADAPTER = :net_http
 
-    DEFAULT_ENDPOINT = 'https://dev-lama01.cityofno.com/CFA/rest/incidents'
+    DEFAULT_ENDPOINT = 'https://dev-lama01.cityofno.com/CFA/rest/incidents'.freeze
+
+    DEFAULT_LOGIN = 'test@example.com'
+
+    DEFAULT_PASS = '12345'
 
     # DEFAULT_RESPONSE = :xml
 
@@ -50,6 +56,8 @@ module LAMA
       self.user_agent             = DEFAULT_USER_AGENT
       # self.response               = DEFAULT_RESPONSE
       self.faraday_options        = DEFAULT_FARADAY_OPTIONS
+      self.login                  = DEFAULT_LOGIN
+      self.pass                   = DEFAULT_PASS
       self
     end
   end
