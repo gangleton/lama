@@ -12,7 +12,7 @@ describe LAMA::Client::Inspection do
     end
 
     it "returns a hashie of inspections related to an incident" do
-      incidents = @client.inspections(1)
+      inspections = @client.inspections(1)
     end
   end
 end
