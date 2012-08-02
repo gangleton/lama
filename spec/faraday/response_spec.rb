@@ -19,13 +19,13 @@ describe Faraday::Response do
     context "when HTTP status is #{status}" do
 
       before do
-        stub_get("/search(from)02-01-2011(to)02-28-2011").
+        stub_get("/user").
         to_return(:status => status, :body => fixture("inspection.xml"))
       end
 
       it "should raise #{exception.name} error" do
         lambda do
-          @client.inspections
+          @client.user
         end.should raise_error exception
       end
     end

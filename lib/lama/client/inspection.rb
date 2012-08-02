@@ -1,8 +1,8 @@
 module LAMA
   class Client
     module Inspection
-      def inspections(options={})
-        get("search(from)02-01-2011(to)02-28-2011", options)
+      def inspections(num, index=0, options={})
+        get("#{num}/inspections/#{index}")
       end
     end
   end

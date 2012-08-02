@@ -25,9 +25,9 @@ describe LAMA do
 
   describe ".delegate" do
     it "should delegate missing methods to LAMA::Client" do
-      stub_get("/search(from)02-01-2011(to)02-28-2011").
+      stub_get("/user").
           to_return(:status => 200, :body => fixture("inspection.xml"))
-      records  = LAMA.inspections
+      records  = LAMA.user
     end
   end
 end
