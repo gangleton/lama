@@ -3,8 +3,8 @@ require 'cgi'
 module LAMA
   class Client
     module Incident
-      def incident(id, options = {})
-        get("#{id}", options)
+      def incident(num, options = {})
+        get("#{num}", options)
       end
 
       def incidents_by_date(from="02-01-2011", to="02-28-2011", options={})

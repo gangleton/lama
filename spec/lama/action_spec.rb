@@ -7,7 +7,7 @@ describe LAMA::Client::Action do
 
   describe "#actions" do
     before do
-      stub_get("/1/actions/0").
+      stub_get("/1/actions").
         to_return(:status => 200, :body => fixture("actions.xml"))
     end
 
