@@ -20,7 +20,7 @@ describe Faraday::Response do
 
       before do
         stub_get("/user").
-        to_return(:status => status, :body => fixture("inspection.xml"))
+        to_return(:status => status, :body => fixture("user.xml"))
       end
 
       it "should raise #{exception.name} error" do
