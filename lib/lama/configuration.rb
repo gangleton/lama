@@ -15,7 +15,7 @@ module LAMA
 
     DEFAULT_ADAPTER = :net_http
 
-    DEFAULT_ENDPOINT = 'https://dev-lama01.cityofno.com/CFA/rest/incidents'.freeze
+    DEFAULT_ENDPOINT = 'https://inspections.nola.gov/LAMA_CFA/rest/inspections'.freeze
 
     DEFAULT_LOGIN = 'test@example.com'
 
