@@ -4,10 +4,11 @@ module LAMA
       def events(id, options = {})
         index = options[:index]
         if index.nil?
-          get("#{id}/events")
+          response = get("#{id}/events")
         else
-          get("#{id}/events/#{index}")
+          response = get("#{id}/events/#{index}")
         end
+        response.ArrayOfIncidEvent.IncidEvent
       end
     end
   end

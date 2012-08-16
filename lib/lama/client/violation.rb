@@ -4,10 +4,11 @@ module LAMA
       def violations(id, options={})
         index = options[:index]
         if index.nil?
-          get("#{id}/violations")
+          response = get("#{id}/violations")
         else
-          get("#{id}/violations/#{index}")
+          response = get("#{id}/violations/#{index}")
         end
+        response.ArrayOfViolation.Violation
       end
     end
   end

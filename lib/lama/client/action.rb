@@ -4,10 +4,11 @@ module LAMA
       def actions(id, options = {})
         index = options[:index]
         if index.nil?
-          get("#{id}/actions")
+          response = get("#{id}/actions")
         else
-          get("#{id}/actions/#{index}")
+          response = get("#{id}/actions/#{index}")
         end
+        response.ArrayOfCodeAction.CodeAction
       end
     end
   end

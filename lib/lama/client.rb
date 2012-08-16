@@ -33,6 +33,6 @@ module LAMA
     include LAMA::Client::Judgement
     include LAMA::Client::Property
     include LAMA::Client::User
-    include LAMA::Client::User
+    include LAMA::Client::Violation
   end
 end

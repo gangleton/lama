@@ -4,10 +4,11 @@ module LAMA
       def fees(id, options={})
         index = options[:index]
         if index.nil?
-          get("#{id}/fees")
+          response = get("#{id}/fees")
         else
-          get("#{id}/fees/#{index}")
+          response = get("#{id}/fees/#{index}")
         end
+        response.ArrayOfCodeFees
       end
     end
   end

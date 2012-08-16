@@ -4,9 +4,9 @@ module LAMA
       def judgements(id, options = {})
         index = options[:index]
         if index.nil?
-          get("#{id}/judgements")
+          get("#{id}/judgments")
         else
-          get("#{id}/judgements/#{index}")
+          get("#{id}/judgments/#{index}")
         end
       end
     end

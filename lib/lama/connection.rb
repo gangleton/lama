@@ -18,9 +18,8 @@ module LAMA
         builder.basic_auth login, pass
         builder.use Faraday::Request::UrlEncoded
         builder.use Faraday::Response::RaiseError
-        builder.use Faraday::Response::Rashify
-        builder.use Faraday::Response::Mashify
-        builder.use Faraday::Response::ParseXml
+        builder.use FaradayMiddleware::Mashify
+        builder.use FaradayMiddleware::ParseXml
         builder.adapter(Faraday.default_adapter)
       end
     end

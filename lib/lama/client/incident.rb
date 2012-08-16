@@ -18,17 +18,20 @@ module LAMA
         unless date_regex.match(from) && date_regex.match(to)
           raise ArgumentError, "Date format is MM-DD-YYYY"
         end
-        get("search(from)#{from}(to)#{to}", options)
+        response = get("search(from)#{from}(to)#{to}", options)
+        response.DataSet.diffgram.NewDataSet.Incidents
       end
 
       def incidents_by_location(loc, options = {})
-        loc = CGI::escape(loc)
-        get("search(location)#{loc}")
+        loc = URI.encode(loc)
+        response = get("search(location)#{loc}")
+        response.DataSet.diffgram.NewDataSet.Incidents
       end
 
       def incidents_by_address(addr, options = {})
-        addr = CGI::escape(addr)
-        get("search(address)#{addr}")
+        addr = URI.encode(addr)
+        response = get("search(address)#{addr}")
+        response.DataSet.diffgram.NewDataSet.Incidents
       end
     end
   end

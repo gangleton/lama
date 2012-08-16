@@ -4,10 +4,11 @@ module LAMA
       def inspections(id, options={})
         index = options[:index]
         if index.nil?
-          get("#{id}/inspections")
+          response = get("#{id}/inspections")
         else
-          get("#{id}/inspections/#{index}")
+          response = get("#{id}/inspections/#{index}")
         end
+        response.ArrayOfInspection.Inspection
       end
     end
   end
