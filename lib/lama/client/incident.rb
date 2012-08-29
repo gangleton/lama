@@ -3,8 +3,12 @@ require 'cgi'
 module LAMA
   class Client
     module Incident
+      #Get all information for a particular incident
+      #
+      #@param num [String] A LAMA identifier for an incident
       def incident(num, options = {})
-        get("#{num}", options)
+        response = get("#{num}", options)
+        response.Incident
       end
 
       def incidents_by_date(from="02-01-2011", to="02-28-2011", options={})
