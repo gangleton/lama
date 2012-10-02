@@ -1,6 +1,10 @@
 module LAMA
   class Client
     module Violation
+      #Get all violations for a particular incident
+      #
+      #@param [String] the LAMA number for an incident
+      #@return [Hashie] violations information
       def violations(id, options={})
         index = options[:index]
         if index.nil?

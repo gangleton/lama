@@ -24,5 +24,5 @@ def fixture(file)
 end
 
 def lama_url(url, login = 'test@example.com', pass = '12345')
-  "https://#{login}:#{pass}@dev-lama01.cityofno.com/CFA/rest/incidents#{url}"
+  "https://#{login}:#{pass}@inspections.nola.gov/LAMA_CFA/rest/incidents#{url}"
 end

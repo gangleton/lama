@@ -1,12 +1,16 @@
 module LAMA
   class Client
     module Judgement
-      def judgements(id, options = {})
+      #Get judgements for a particular incident
+      #
+      #@param [String] A LAMA identifier for an incident
+      #@return [Hashie] Judgment information
+      def judgements(num, options = {})
         index = options[:index]
         if index.nil?
-          get("#{id}/judgments")
+          get("#{num}/judgments")
         else
-          get("#{id}/judgments/#{index}")
+          get("#{num}/judgments/#{index}")
         end
       end
     end

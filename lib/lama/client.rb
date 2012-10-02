@@ -15,6 +15,9 @@ module LAMA
   class Client
     attr_accessor(*Configuration::VALID_OPTIONS_KEYS)
 
+    #Create a new LAMA::Client instance
+    #
+    #@param [Hash] include login and pass as options keys
     def initialize(options={})
       options = LAMA.options.merge(options)
       Configuration::VALID_OPTIONS_KEYS.each do |key|

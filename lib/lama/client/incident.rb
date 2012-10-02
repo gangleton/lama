@@ -5,7 +5,8 @@ module LAMA
     module Incident
       #Get all information for a particular incident
       #
-      #@param num [String] A LAMA identifier for an incident
+      #@param [String] the LAMA number for an incident
+      #@return [Hashie] incident information
       def incident(num, options = {})
         response = get("#{num}", options)
         response.Incident
