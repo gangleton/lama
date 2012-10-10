@@ -8,10 +8,11 @@ module LAMA
       def judgements(num, options = {})
         index = options[:index]
         if index.nil?
-          get("#{num}/judgments")
+          results = get("#{num}/judgments")
         else
-          get("#{num}/judgments/#{index}")
+          results = get("#{num}/judgments/#{index}")
         end
+        results.ArrayOfJudgment.Judgment
       end
     end
   end
