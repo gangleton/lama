@@ -32,6 +32,24 @@ describe LAMA::Client::Incident do
   end
 
   describe "#incidents_by_location" do
+    context "location passed in" do
+      before do
+        stub_get("/search(location)1629%20ALABO%20ST").
+          to_return(:status => 200, :body => fixture("location.xml"))
+      end
+
+      it "returns incidents from a particular location" do
+        results = @client.incidents_by_location("1629 ALABO ST")
+        results.class.should eq(Array)
+      end
+    end
+
+    context "location not passed in" do
+      before do
+        stub_get("/search(location)").
+          to_return(:status => 200, :body => fixture("location-empty.xml"))
+      end
+    end
   end
 
   describe "#incidents_by_address" do
