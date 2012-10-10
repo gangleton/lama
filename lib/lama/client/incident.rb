@@ -29,8 +29,7 @@ module LAMA
 
       def incidents_by_location(loc, options = {})
         loc = URI.encode(loc)
-        loc.gsub('[', '')
-        loc.gsub(']', '')
+        loc = loc.gsub('[', '').gsub(']', '')
         response = get("search(location)#{loc}")
         response.DataSet.diffgram.NewDataSet.Incidents
       end
