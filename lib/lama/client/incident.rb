@@ -28,10 +28,12 @@ module LAMA
       end
 
       def incidents_by_location(loc, options = {})
-        loc = URI.encode(loc)
-        loc = loc.gsub('[', '').gsub(']', '')
-        response = get("search(location)#{loc}")
-        response.DataSet.diffgram.NewDataSet.Incidents
+        unless loc.nil?
+          loc = URI.encode(loc)
+          loc = loc.gsub('[', '').gsub(']', '')
+          response = get("search(location)#{loc}")
+          response.DataSet.diffgram.NewDataSet.Incidents
+        end
       end
 
       def incidents_by_address(addr, options = {})
